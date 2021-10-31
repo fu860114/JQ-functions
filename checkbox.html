@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <style>
+            /* .tr1{
+                outline: 1xp solid red;
+            }
+            .tr2{
+                outline: 1xp solid red;
+            } */    /*找不到tr*/
+        </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <div class="row">
+
+        </div> -->
+        <table class="table table-bordered">
+            <tr class="tr1">
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>Elon Musk</td>
+                <td>0912323263</td>
+                <td>Elon Musk@gmail.com</td>
+            </tr>
+            <tr class="tr2">
+                <td><input type="checkbox"></td>
+                <td>Elon Musk</td>
+                <td>0912323263</td>
+                <td>Elon Musk@gmail.com</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Elon Musk</td>
+                <td>0912323263</td>
+                <td>Elon Musk@gmail.com</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Elon Musk</td>
+                <td>0912323263</td>
+                <td>Elon Musk@gmail.com</td>
+            </tr>
+        </table>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+        $('input').click(function(){  
+            // console.log('hi',$(this));
+            // if($(this).is(':checked')){
+            //     $(this).parent().parent().css('background','lightblue');
+            // }else{
+            //     $(this).parent().parent().css('background','white');
+            // }   
+                 
+            // if(){}else{};
+            // $(this).parentsUntil('table').css('background','red');   --因為架構還有一個tbody
+
+
+            //老師寫法
+            //方法一
+            // $('tr').css('background','transparent');
+            // $('input:checked').closest('tr').css('background','lightblue');
+
+            //方法二
+            //attr:預設的html屬性
+            //prop:當下的狀態
+            if($(this).prop('checked')==true){
+                $(this).closest('tr').css('background','lightblue')
+            }else{
+                $(this).closest('tr').css('background','transparent')
+            }
+        });
+        
+
+    </script>
+</body>
+
+</html>

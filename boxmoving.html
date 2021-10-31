@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.css">
+    <style>
+        .wrap{
+            width: 800px;
+            height: 400px;
+            background-color: aquamarine;
+            position: relative;
+            margin:100px auto 20px;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box">
+
+        </div>
+    </div>
+    <div class="text-center">
+        <div>
+            <button id="up" class="btn btn-info">
+                <i class="fas fa-caret-up"></i>
+            </button>
+            <button id="right" class="btn btn-info mx-3">
+                <i class="fas fa-caret-right"></i>
+            </button>
+            <button id="left" class="btn btn-info mx-3">
+                <i class="fas fa-caret-left"></i>
+            </button>
+            <button id="down" class="btn btn-info">
+                <i class="fas fa-caret-down"></i>
+            </button>
+        </div>
+    </div>
+    
+        <script src="https://code.jquery.com/jquery-3.6.0.js"integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="crossorigin="anonymous">
+        </script> 
+        <script>
+            function boxMoveRight(){
+                if(parseInt( $('.box').css('left')) <= 650){
+                    $('.box').css('left','+=50');
+            }
+        }
+
+            $('#up').on('click',function(){
+                const topVal=$('.box').css('top');
+                console.log('topVal:',topVal);
+                 
+                 if(parseInt( $('.box').css('top')) >= 50){
+                    $('.box').css('top','-=50'); 
+            };
+                     
+            });
+            $('#left').on('click',function(){ 
+                if(parseInt( $('.box').css('left')) >= 50){
+                    $('.box').css('left','-=50');   
+            };
+        });
+            $('#right').on('click',function(){
+                if(parseInt( $('.box').css('left')) <= 650){
+                    $('.box').css('left','+=50');  
+            };
+  
+            });
+            $('#down').on('click',function(){
+                if(parseInt( $('.box').css('top')) <= 250){
+                    $('.box').css('top','+=50'); 
+            };
+                
+            });
+            
+            //parseInt('100px')從前面爬數字直到遇到文字，所以這邊是到100
+            $(document).on('keydown',function(event){  //本身就帶的一個event，寫出來寫在下面console.log印出
+                console.log('event:',event.which);//印出which(每個間所代表的數字)
+                 if($(event.which)===39){   //why no 
+                     boxMoveRight();  
+             };
+                
+            });
+
+        </script>
+
+</body>
+</html>

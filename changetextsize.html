@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<style>
+    .large{
+        font-size: 60px;
+    }
+    .med{
+        font-size: 30px;
+    }
+    .small{
+        font-size: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="btn-group">
+                <button class="btn btn-info s">S</button>
+                <button class="btn btn-info active m">M</button>
+                <button class="btn btn-info l">L</button>
+            </div>
+        </div>
+        <h2>jQuery</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta magni molestiae modi ipsum illum numquam, saepe optio eos dignissimos architecto ad aperiam fugit exercitationem porro explicabo quia? Impedit, ratione deleniti?</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis velit asperiores commodi eos doloribus at, excepturi ipsum delectus dolorum. Voluptates a ratione sunt voluptatum, ipsam ut animi vel expedita aperiam.</p>
+    </div>
+</body>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.js"integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="crossorigin="anonymous">
+    </script> 
+    <script>
+        function activear(){
+            $('.btn').removeClass('active');  
+            $(this).addClass('active');
+        }
+
+        // $('.s').click(function(){
+        //   $('p').removeClass('med large');
+        //   $('p').addClass('small');
+        //   activear();
+        // });
+        // $('.m').click(function(){
+        //     $('p').removeClass('small large');
+        //   $('p').addClass('med'); 
+        //   activear();
+        // });
+        // $('.l').click(function(){
+        //     $('p').removeClass('med small');
+        //   $('p').addClass('large');  
+        //   activear();
+        // });
+
+        //advanced method
+        $('.btn').click(function(){
+            if($(this).is(':contains("S")')){
+                $('p').removeClass('med large');
+          $('p').addClass('small');
+          activear();
+            }
+            if($(this).is(':contains("M")')){
+                $('p').removeClass('small large');
+          $('p').addClass('med');
+          activear();
+            }
+            if($(this).is(':contains("L")')){
+                $('p').removeClass('med small');
+          $('p').addClass('large');
+          activear();
+            }
+        })
+    </script>
+</html>

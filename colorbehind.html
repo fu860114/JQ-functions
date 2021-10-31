@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <style>
+        .box{
+            width: 250px;
+            height: 100px;
+            outline: 1px solid red;
+        }
+        .container{
+            outline: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">     
+                    <!-- 無法用mt or pt推開 -->
+        <div class="row justify-content-center ">
+            <div class="box box1">box1</div>
+            <div class="box box2">box2</div>
+            <div class="box box3">box3</div>
+            <div class="box box4">box4</div>
+            <div class="box box5">box5</div>
+            <div class="box box6">box6</div>
+            <div class="box box7">box7</div>
+            <div class="box box8">box8</div>
+            <div class="box box9">box9</div>
+            <div class="box box10">box10</div>
+            <div class="box box11">box11</div>
+            <div class="box box12">box12</div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $('.box').click(function(){
+            console.log('hi',$(this));
+            $(this).nextAll().css('background', "lightblue");
+        });
+    </script>
+</body>
+</html>
